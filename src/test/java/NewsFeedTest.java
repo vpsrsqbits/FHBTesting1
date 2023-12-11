@@ -1,2 +1,2 @@
-public class NewsFeedTst {
+public class NewsFeedTest {
 }
