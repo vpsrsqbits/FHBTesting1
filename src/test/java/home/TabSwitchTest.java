@@ -1,18 +1,17 @@
-import com.github.javafaker.Faker;
+package home;
+
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class HomePageTest {
+public class TabSwitchTest {
 
 
     ChromeDriver driver;
@@ -21,30 +20,31 @@ public class HomePageTest {
 
     String URL = "https://dev-app-fhb.quartustech.com/";
     WebDriverWait wait;
-//    int counter=0;
+/*
+    int counter=0;
+    @BeforeAll
+    void setup() {
+        driver = new ChromeDriver();
+        driver.get(URL);
 
-//    @BeforeAll
-//    void setup() {
-//        driver = new ChromeDriver();
-//        driver.get(URL);
-//
-//        home = driver.findElement(By.linkText("/"));
-//        chats = driver.findElement(By.linkText("chats"));
-//        yolo = driver.findElement(By.linkText("yolo"));
-//        explore = driver.findElement(By.linkText("explore"));
-//        ai_Search = driver.findElement(By.linkText("ai-search"));
-//        news_Feed = driver.findElement(By.linkText("news-feed"));
-//        become_Sponsor = driver.findElement(By.linkText("become-sponsor"));
-//        reference_Guide = driver.findElement(By.linkText("reference-guide"));
-//        about = driver.findElement(By.linkText("about"));
-//        settings = driver.findElement(By.linkText("settings"));
-//        help_Center = driver.findElement(By.linkText("help-center"));
-//        logout = driver.findElement(By.id("icn_Logout"));
-//
-//    }
+        home = driver.findElement(By.linkText("/"));
+        chats = driver.findElement(By.linkText("chats"));
+        yolo = driver.findElement(By.linkText("yolo"));
+        explore = driver.findElement(By.linkText("explore"));
+        ai_Search = driver.findElement(By.linkText("ai-search"));
+        news_Feed = driver.findElement(By.linkText("news-feed"));
+        become_Sponsor = driver.findElement(By.linkText("become-sponsor"));
+        reference_Guide = driver.findElement(By.linkText("reference-guide"));
+        about = driver.findElement(By.linkText("about"));
+        settings = driver.findElement(By.linkText("settings"));
+        help_Center = driver.findElement(By.linkText("help-center"));
+        logout = driver.findElement(By.id("icn_Logout"));
 
-    @Test()
-    void test(WebDriver driver) throws InterruptedException {
+    }
+*/
+
+//    @Test()
+    public void test(WebDriver driver) throws InterruptedException {
 //        driver.switchTo().newWindow(WindowType.TAB);
 //        driver.get(URL);
         Thread.sleep(2000);
@@ -91,7 +91,7 @@ public class HomePageTest {
         Thread.sleep(1000);
     }
 
-    @AfterAll
+//    @AfterAll
     void teardown() {
 //        driver.quit();
     }
