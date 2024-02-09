@@ -15,7 +15,7 @@ public class TabSwitchTest {
 
 
     ChromeDriver driver;
-    WebElement home, chats, yolo, explore, ai_Search, news_Feed, become_Sponsor, reference_Guide, about, settings, help_Center, logout;
+    WebElement home, chats, yolo, explore, ai_Search, news_Feed, become_Sponsor, reference_Guide, about, settings, help_Center, logout, userProfile, myAccount;
 //    Faker faker = new Faker();
 
     String URL = "https://dev-app-fhb.quartustech.com/";
@@ -75,18 +75,33 @@ public class TabSwitchTest {
         reference_Guide = driver.findElement(By.xpath("//*[contains(text(),'Reference Guide')]"));
         reference_Guide.click();
         Thread.sleep(1000);
-        about = driver.findElement(By.xpath("//*[contains(text(),'About')]"));
-        about.click();
+
+
+
+        userProfile = driver.findElement(By.xpath("//main/div[2]/div/div[1]/div[2]/div/button[4]"));
+        userProfile.click();
         Thread.sleep(1000);
-        settings = driver.findElement(By.xpath("//*[contains(text(),'Settings')]"));
+
+        myAccount = driver.findElement(By.xpath("//div/ul/li/div/span/span[contains(text(),'My account')]"));
+        myAccount.click();
+        Thread.sleep(1000);
+
+        userProfile = driver.findElement(By.xpath("//main/div[2]/div/div[1]/div[2]/div/button[4]"));
+        userProfile.click();
+        Thread.sleep(1000);
+
+        settings = driver.findElement(By.xpath("//div/ul/li/div/span/span[contains(text(),'Settings')]"));
         settings.click();
         Thread.sleep(1000);
-        help_Center = driver.findElement(By.xpath("//*[contains(text(),'Help Center')]"));
-        help_Center.click();
+
+        userProfile = driver.findElement(By.xpath("//main/div[2]/div/div[1]/div[2]/div/button[4]"));
+        userProfile.click();
         Thread.sleep(1000);
-        logout = driver.findElement(By.id("icn_Logout"));
+
+        logout = driver.findElement(By.xpath("//div/ul/li/div/span/span[contains(text(),'Logout')]"));
         logout.click();
         Thread.sleep(1000);
+
         driver.findElement(By.xpath("//*[contains(text(),'Yes, Log Out')]")).click();
         Thread.sleep(1000);
     }
