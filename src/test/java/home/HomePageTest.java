@@ -1,31 +1,19 @@
 package home;
 
-import net.datafaker.Faker;
+import org.frenbenhealth.SignIn;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.time.Duration;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class HomePageTest {
-    Faker faker = new Faker();
-    WebElement email,password,signIn,create,title,description,select_Category,select_Topic,post,offer_Benefits,offer_Type,promotion_Type,promote_Product,product_Category,offer_Period,enter_Location,tag_People,personalized_Message,event_Period,notification,services,events,offers,filter,apply,profile,award_Points,nft,activity,edit_Profile,full_name,save,lastElement,upload_Image,search_User,view_All_User,select_User;
+    WebElement select_Category,select_Topic,notification,services,events,offers,filter,apply,profile,award_Points,nft,activity,full_name,save,search_User,view_All_User,select_User;
     WebDriver driver;
+    SignIn object = new SignIn();
     int i = 0;
     @BeforeAll
     void setup() throws InterruptedException {
-        driver = new ChromeDriver();
-        driver.get("https://dev-app-fhb.quartustech.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-        email = driver.findElement(By.xpath("//*[@id=\"username\"]"));
-        password = driver.findElement(By.xpath("//*[@id=\"password\"]"));
-        signIn = driver.findElement(By.xpath("//button[contains(text(),'Sign In')]"));
-        driver.manage().window().maximize();
-        email.sendKeys("randall.hen");
-        password.sendKeys("Test@1234");
-        signIn.click();
+        driver = object.signIn();
         Thread.sleep(4000);
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://dev-app-fhb.quartustech.com/");
@@ -44,203 +32,20 @@ public class HomePageTest {
 //        System.out.println(option);
 //    }
 
-//    The following lines of code creates multiple posts.
 
 //    @Test
-    @RepeatedTest(5)
-    public void  post() throws InterruptedException {
+    public void createPost() throws InterruptedException {new Post().createPost(driver);}
 
-        String script = "arguments[0].scrollIntoView();";
+    @Test
+    public void createOffer() throws InterruptedException{new Offer().createOffer(driver);}
 
-        Thread.sleep(2000);
-
-        create = driver.findElement(By.id("ic_add_new_post"));
-        create.click();
-        Thread.sleep(5000);
-
-//----- Post tab -------------------------------------------------------------------------------------------------------
-
-        upload_Image = driver.findElement(By.xpath("/html/body/div[1]/main/div[2]/div/div[2]/div/div/main/div[3]/form/div/div[1]/div/input"));
-        upload_Image.sendKeys("/home/squarebits/Desktop/Test data/Test Images/Test Post Images/nature/image"+faker.number().numberBetween(0,50)+".jpg");
-        Thread.sleep(3000);
-        driver.findElement(By.id("crop-done")).click();
-        Thread.sleep(5000);
-        title = driver.findElement(By.id("title"));
-        title.sendKeys(faker.shakespeare().hamletQuote());
-        description = driver.findElement(By.id("description"));
-        description.sendKeys(faker.shakespeare().asYouLikeItQuote());
-
-//      Implement scrolling here.
-
-        lastElement = driver.findElement(By.cssSelector("p:last-child"));
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript(script, lastElement);
-
-//      Select Category.
-        select_Category = driver.findElement(By.xpath("//*[contains(text(),'Physical')]"));
-        select_Category.click();
-//      Select a topic.
-        select_Topic = driver.findElement(By.xpath("//*[contains(text(),'Exercise')]"));
-        select_Topic.click();
-        post = driver.findElement(By.xpath("//*[contains(text(),'Post Now')]"));
-        post.click();
-        Thread.sleep(3000);
-
-
-
-    }
 //    @Test
-    @Order(1)
-    public void create() throws InterruptedException {
-        String script = "arguments[0].scrollIntoView();";
+    public void createEvent() throws InterruptedException{new Event().createEvent(driver);}
 
-        Thread.sleep(2000);
-
-        create = driver.findElement(By.id("ic_add_new_post"));
-        create.click();
-        Thread.sleep(5000);
-
-//----- Post tab -------------------------------------------------------------------------------------------------------
-
-        upload_Image = driver.findElement(By.xpath("/html/body/div[1]/main/div[2]/div/div[2]/div/div/main/div[3]/form/div/div[1]/div/input"));
-        upload_Image.sendKeys("https://source.unsplash.com/featured/?cars");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[contains(text(),'Done')]")).click();
-        Thread.sleep(5000);
-        title = driver.findElement(By.id("title"));
-        title.sendKeys("Test title");
-        description = driver.findElement(By.id("description"));
-        description.sendKeys("Test description");
-
-//      Implement scrolling here.
-
-        lastElement = driver.findElement(By.cssSelector("p:last-child"));
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript(script, lastElement);
-
-//      Select Category.
-        select_Category = driver.findElement(By.xpath("//*[contains(text(),'Physical')]"));
-        select_Category.click();
-//      Select a topic.
-        select_Topic = driver.findElement(By.xpath("//*[contains(text(),'Exercise')]"));
-        select_Topic.click();
-        post = driver.findElement(By.xpath("//*[contains(text(),'Post Now')]"));
-        post.click();
-        Thread.sleep(3000);
-
-//----- Offers tab -----------------------------------------------------------------------------------------------------
-
-        create = driver.findElement(By.id("ic_add_new_post"));
-        create.click();
-        Thread.sleep(3000);
-
-        offers = driver.findElement(By.xpath("//button[contains(text(),'Offers')]"));
-        offers.click();
-
-        Thread.sleep(3000);
-
-        title = driver.findElement(By.id("title"));
-        title.sendKeys("Test title");
-        offer_Benefits = driver.findElement(By.id("benefitToSponsee"));
-        offer_Benefits.sendKeys("Test Benefits");
-        description = driver.findElement(By.id("description"));
-        description.sendKeys("Test Description");
-
-//      Implement scrolling here
-
-        lastElement = driver.findElement(By.cssSelector("p:last-child"));
-        js.executeScript(script, lastElement);
-
-        select_Category = driver.findElement(By.xpath("//*[contains(text(),'Physical')]"));
-        select_Category.click();
-        select_Topic = driver.findElement(By.xpath("//*[contains(text(),'Exercise')]"));
-        select_Topic.click();
-//      Dropdown
-        offer_Type = driver.findElement(By.id("select-offerType"));
-        promotion_Type = driver.findElement(By.id("select-promotionType"));
-
-        promote_Product = driver.findElement(By.id("productToBePromoted"));
-        promote_Product.sendKeys("Test Product");
-
-//      Dropdown
-        product_Category = driver.findElement(By.id("select-productCategory"));
-
-        offer_Period = driver.findElement(By.id("offerPeriod"));
-        enter_Location = driver.findElement(By.id("location"));
-//      Dropdown
-        tag_People = driver.findElement(By.id("ic_back_arrow_nav"));
-
-        post = driver.findElement(By.xpath("//button[contains(text(),'Post Now')]"));
-        post.click();
-        Thread.sleep(3000);
-
-//----- Events tab -----------------------------------------------------------------------------------------------------
-
-        events = driver.findElement(By.xpath("//button[contains(text(),'Events')]"));
-        events.click();
-
-        Thread.sleep(3000);
-
-        title = driver.findElement(By.id("title"));
-        title.sendKeys("Test event title");
-        personalized_Message = driver.findElement(By.id("personalizedMessage"));
-        personalized_Message.sendKeys("Test event message");
-
-        description = driver.findElement(By.id("description"));
-        description.sendKeys("Test event description");
-
-//      Implement scrolling here till end.
-
-//        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//    @Test
+    public void createService() throws InterruptedException {new Service().createService(driver);}
 
 
-        select_Category = driver.findElement(By.xpath("//*[contains(text(),'Physical')]"));
-        select_Category.click();
-
-        lastElement = driver.findElement(By.xpath("//button[contains(text(),'Post Now')]"));
-//        js.executeScript(script, lastElement);
-//        lastElement = driver.findElement(By.cssSelector("p:last-child"));
-//        js.executeScript(script, lastElement);
-        Thread.sleep(3000);
-
-        select_Topic = driver.findElement(By.xpath("//*[contains(text(),'Exercise')]"));
-        select_Topic.click();
-
-//      Implement date picker logic.
-//        event_Period = driver.findElement(By.id("eventPeriod"));
-//        event_Period.click();
-
-        enter_Location = driver.findElement(By.id("location"));
-//      Implement location
-
-        tag_People = driver.findElement(By.id("ic_back_arrow_nav"));
-
-        post = driver.findElement(By.xpath("//button[contains(text(),'Post Now')]"));
-        post.click();
-        Thread.sleep(3000);
-
-//----- Services tab ---------------------------------------------------------------------------------------------------
-
-        services = driver.findElement(By.xpath("//div/button[contains(text(),'Services')]"));
-        services.click();
-
-        Thread.sleep(3000);
-
-        title = driver.findElement(By.id("title"));
-        title.sendKeys("Test service title");
-        description = driver.findElement(By.id("description"));
-        description.sendKeys("Test service description");
-        select_Category = driver.findElement(By.xpath("//*[contains(text(),'Physical')]"));
-        select_Category.click();
-        select_Topic = driver.findElement(By.xpath("//*[contains(text(),'Exercise')]"));
-        select_Topic.click();
-        post = driver.findElement(By.xpath("//button[contains(text(),'Post Now')]"));
-        post.click();
-        Thread.sleep(3000);
-
-    }
 //    @Test()
     @Order(2)
     public void notification() throws InterruptedException {
@@ -249,6 +54,7 @@ public class HomePageTest {
 
         Thread.sleep(3000);
     }
+
 //    @Test
     @Order(3)
     public void filter() throws InterruptedException {
@@ -271,6 +77,7 @@ public class HomePageTest {
         Thread.sleep(3000);
 
     }
+
 //    @Test
     @Order(4)
     public void profile() throws InterruptedException {
@@ -306,6 +113,7 @@ public class HomePageTest {
         Thread.sleep(2000);
 
     }
+
 //    @Test
     @Order(5)
     public void edit_Profile() throws InterruptedException {
@@ -325,6 +133,7 @@ public class HomePageTest {
         Thread.sleep(3000);
 
     }
+
 //    @Test
     @Order(6)
     public void recent_Chats() throws InterruptedException {
@@ -347,6 +156,7 @@ public class HomePageTest {
         select_User = driver.findElement(By.xpath("//*[@id=\"__next\"]/main/div[2]/div/div[2]/div/section/div/div[2]/div[3]/div[1]"));
         select_User.click();
     }
+
 //    @AfterAll
     public void teardown() throws InterruptedException {
         Thread.sleep(5000);

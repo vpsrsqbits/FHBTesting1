@@ -39,6 +39,8 @@ public class ForgotPasswordTest {
         newPassword1.sendKeys("Test@123");
         newPassword2 = driver.findElement(By.id("confirmPassword"));
         newPassword2.sendKeys("Test@123");
+        System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
         resend = driver.findElement(By.xpath("//span[contains(text(),'Resend')]"));
         resend.click();
         setPassword = driver.findElement(By.xpath("//button[contains(text(),'Set Password')]"));

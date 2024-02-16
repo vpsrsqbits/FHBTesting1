@@ -3,15 +3,13 @@ package profilesetup;
 import net.datafaker.Faker;
 import org.openqa.selenium.*;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import java.util.Random;
 import java.util.stream.IntStream;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-    public class ProfileSetupTest {
+    public class ProfileSetup {
 
     Faker faker = new Faker();
     WebDriver driver;

@@ -7,18 +7,19 @@ import org.openqa.selenium.WindowType;
 
 import java.time.Duration;
 
-public class SeekingFriendsFlowTest {
-    String URL="https://dev-app-fhb.quartustech.com/profile-setup";
-    WebElement seeking_Friends, physical, massage, next, access;
-    public void seekingFriends_Flow(WebDriver driver) throws InterruptedException {
-        Thread.sleep(5000);
-        driver.switchTo().newWindow(WindowType.TAB);
+public class YOLO {
+    String URL = "https://dev-app-fhb.quartustech.com/profile-setup";
+    WebElement yolo, next, physical, massage, access;
+    public void yolo_Flow(WebDriver driver) throws InterruptedException {
+//        Thread.sleep(5000);
+//        driver.switchTo().newWindow(WindowType.TAB);
+
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        seeking_Friends = driver.findElement(By.xpath("//span[contains(text(),'myhealthysocial')]"));
+        yolo = driver.findElement(By.xpath("//*[contains(text(),'YOLO')]"));
 
-        seeking_Friends.click();
+        yolo.click();
+//  Handle this dropdown
 
         physical = driver.findElement(By.xpath("//*[contains(text(), 'Physical')]"));
         physical.click();
@@ -28,21 +29,20 @@ public class SeekingFriendsFlowTest {
         massage.click();
 
 /*
-            stretching = driver.findElement(By.xpath("//*[contains(text(), 'Stretching')]"));
+            stretching = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div/div/div[2]/div/div/div/div/div/div/form/div/div/div[4]"));
             stretching.click();
-            exercise = driver.findElement(By.xpath("//*[contains(text(), 'Exercise')]"));
+            exercise = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div/div/div[2]/div/div/div/div/div/div/form/div/div/div[5]"));
             exercise.click();
-        physical.click();
-        lifestyle = driver.findElement(By.xpath("//*[contains(text(), 'Lifestyle')]"));
-        lifestyle.click();
-            beauty = driver.findElement(By.xpath("//*[contains(text(), 'Beauty')]"));
-            beauty.click();
-            parenting = driver.findElement(By.xpath("//*[contains(text(), 'Parenting')]"));
-            parenting.click();
-        lifestyle.click();
-*/
 
+        lifestyle = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div/div/div[2]/div/div/div/div/div/div/form/div/div/div[6]"));
+        lifestyle.click();
+            beauty = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div/div/div[2]/div/div/div/div/div/div/form/div/div/div[7]"));
+            beauty.click();
+            parenting = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div/div/div[2]/div/div/div/div/div/div/form/div/div/div[8]"));
+            parenting.click();
+*/
         Thread.sleep(3000);
+
         next = driver.findElement(By.xpath("//*[contains(text(), 'Next')]"));
         next.click();
 
@@ -59,6 +59,7 @@ public class SeekingFriendsFlowTest {
 
         next = driver.findElement(By.xpath("//*[contains(text(), 'Next')]"));
         next.click();
-        // To Home
+
+        //To Home
     }
 }

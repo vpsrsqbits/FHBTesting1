@@ -7,15 +7,14 @@ import org.openqa.selenium.WindowType;
 
 import java.time.Duration;
 
-public class JustBrowseFlowTest {
+public class JustBrowse {
     String URL="https://dev-app-fhb.quartustech.com/profile-setup";
     WebElement just_Browse, next, physical, selectTopic, access;
     public void justBrowse_Flow(WebDriver driver) throws InterruptedException {
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
+//        driver.switchTo().newWindow(WindowType.TAB);
 
-        driver.switchTo().newWindow(WindowType.TAB);
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         just_Browse = driver.findElement(By.xpath("//*[contains(text(),'Just Browse Conversations')]"));
         just_Browse.click();

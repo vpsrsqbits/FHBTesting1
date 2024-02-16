@@ -1,43 +1,49 @@
 package profilesetup;
 
+import net.datafaker.Faker;
 import org.openqa.selenium.*;
-
 import java.time.Duration;
 
-public class HealthPractitionerFlowTest {
+public class HealthPractitioner {
+    Faker faker = new Faker();
     String URL = "https://dev-app-fhb.quartustech.com/profile-setup";
-    WebElement practitioner, next, selectExpertise, businessName, contactNumber, businessAddress, lastElement, businessDescription, facebook_url, linkedin_url, youtube_url, instagram_url, twitter_url, addTags;
-    WebElement serviceTitle, serviceDescription, selectCategory, selectTopic, access, tagline, physical, massage;
+    WebElement practitioner, next, selectExpertise, businessName, contactNumber, businessAddress, lastElement, businessDescription, business_url, facebook_url, linkedin_url, youtube_url, instagram_url, twitter_url, addTags;
+    WebElement serviceTitle, serviceDescription, selectCategory, selectTopic, access, tagline, physical, massage, addImage;
     public void healthPractitioner_Flow(WebDriver driver) throws InterruptedException {
-        Thread.sleep(5000);
-
+//        Thread.sleep(5000);
+        String companyName= faker.company().name();
         String script = "arguments[0].scrollIntoView();";
-        driver.switchTo().newWindow(WindowType.TAB);
+//        driver.switchTo().newWindow(WindowType.TAB);
+
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         practitioner = driver.findElement(By.xpath("//*[contains(text(),'I am a health practitioner/specialist')]"));
         practitioner.click();
 
         Thread.sleep(3000);
+
         selectExpertise = driver.findElement(By.xpath("//*[contains(text(), 'Medical Doctor')]"));
+        selectExpertise.click();
+
+        selectExpertise = driver.findElement(By.xpath("//*[contains(text(), 'Social Counselor')]"));
+        selectExpertise.click();
+
+        selectExpertise = driver.findElement(By.xpath("//*[contains(text(), 'Yoga Trainer')]"));
         selectExpertise.click();
         Thread.sleep(2000);
 
-        Thread.sleep(2000);
         next = driver.findElement(By.xpath("//*[contains(text(), 'Next')]"));
         next.click();
 
-
         Thread.sleep(1000);
         businessName = driver.findElement(By.id("businessName"));
-        businessName.sendKeys("Test");
+        businessName.sendKeys(companyName);
         tagline = driver.findElement(By.id("tagLine"));
-        tagline.sendKeys("This is a test tagline.");
+        tagline.sendKeys(faker.company().catchPhrase());
         contactNumber = driver.findElement(By.id("contactNumber"));
-        contactNumber.sendKeys("1234567890");
+        contactNumber.sendKeys(faker.phoneNumber().cellPhone());
         businessAddress = driver.findElement(By.id("address"));
-        businessAddress.sendKeys("Test");
+        businessAddress.sendKeys(faker.address().fullAddress());
 
         lastElement = driver.findElement(By.cssSelector("p:last-child"));
 
@@ -45,26 +51,37 @@ public class HealthPractitionerFlowTest {
         js.executeScript(script, lastElement);
 
         businessDescription = driver.findElement(By.id("aboutYourself"));
-        businessDescription.sendKeys("Test");
+        businessDescription.sendKeys(faker.shakespeare().hamletQuote());
         addTags = driver.findElement(By.id("tags"));
-        addTags.sendKeys("#Test", Keys.ENTER);
+        addTags.sendKeys("#"+faker.harryPotter().house(), Keys.ENTER);
 
-//        addImage
+//      Add Media
+        for(int i=1;i<=5;i++) {
+            addImage = driver.findElement(By.xpath("//div/input[@type='file' and @accept='image/png, image/jpg, image/jpeg, video/mp4, video/mkv']"));
+            addImage.sendKeys("/home/squarebits/Desktop/Test data/Test Images/Test Post Images/nature/image" + faker.number().numberBetween(1, 50) + ".jpg");
+            driver.findElement(By.id("crop-done")).click();
+            Thread.sleep(4000);
+        }
+        addImage = driver.findElement(By.xpath("//div/input[@type='file' and @accept='image/png, image/jpg, image/jpeg, video/mp4, video/mkv']"));
+        addImage.sendKeys("/home/squarebits/Desktop/Test data/Test Videos/Diatery.mp4");
+        Thread.sleep(8000);
+
         next = driver.findElement(By.xpath("//*[contains(text(), 'Next')]"));
         next.click();
 
-//        Add social links
-
+//      Add social links
+        business_url = driver.findElement(By.id("yourURL"));
+        business_url.sendKeys("https://www."+companyName+".org");
         facebook_url = driver.findElement(By.id("facebookURL"));
-        facebook_url.sendKeys("https://www.facebook.com/Randall");
+        facebook_url.sendKeys("https://www.facebook.com/"+companyName);
         linkedin_url = driver.findElement(By.id("linkedInURL"));
-        linkedin_url.sendKeys("https://www.linkedin.com/Randall");
+        linkedin_url.sendKeys("https://www.linkedin.com/"+companyName);
         youtube_url = driver.findElement(By.id("youtubeURL"));
-        youtube_url.sendKeys("https://www.youtube.com/Randall");
+        youtube_url.sendKeys("https://www.youtube.com/"+companyName);
         instagram_url = driver.findElement(By.id("instagramURL"));
-        instagram_url.sendKeys("https://www.instagram.com/Randall");
+        instagram_url.sendKeys("https://www.instagram.com/"+companyName);
         twitter_url = driver.findElement(By.id("xURL"));
-        twitter_url.sendKeys("https://www.twitter.com/Randall");
+        twitter_url.sendKeys("https://www.twitter.com/"+companyName);
 
 //        driver.navigate().back();
 //        Thread.sleep(2000);
@@ -84,8 +101,8 @@ public class HealthPractitionerFlowTest {
         selectCategory = driver.findElement(By.xpath("//*[contains(text(), 'Physical')]"));
         selectTopic = driver.findElement(By.xpath("//*[contains(text(), 'Chiropractic or Massage')]"));
         next = driver.findElement(By.xpath("//*[contains(text(), 'Next')]"));
-        serviceTitle.sendKeys("Test");
-        serviceDescription.sendKeys("Test");
+        serviceTitle.sendKeys(faker.company().industry());
+        serviceDescription.sendKeys(faker.company().catchPhrase());
         selectCategory.click();
         selectTopic.click();
         next.click();

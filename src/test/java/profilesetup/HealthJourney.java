@@ -9,17 +9,16 @@ import org.openqa.selenium.WindowType;
 import java.time.Duration;
 import java.util.stream.IntStream;
 
-public class HealthJourneyFlowTest {
+public class HealthJourney {
     String URL="https://dev-app-fhb.quartustech.com/profile-setup";
     WebElement health_Journey, selectCategory, selectTopic, storyTitle, storyBody, addImage, physical, massage, access, next;
 
     Faker faker = new Faker();
     public void healthJourney_Flow(WebDriver driver) throws InterruptedException {
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
+//        driver.switchTo().newWindow(WindowType.TAB);
 
-        driver.switchTo().newWindow(WindowType.TAB);
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         health_Journey = driver.findElement(By.xpath("//*[contains(text(), 'I have a health journey story')]"));
 
