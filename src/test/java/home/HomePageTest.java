@@ -1,5 +1,6 @@
 package home;
 
+import org.frenbenhealth.Data;
 import org.frenbenhealth.SignIn;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
@@ -13,7 +14,7 @@ public class HomePageTest {
     int i = 0;
     @BeforeAll
     void setup() throws InterruptedException {
-        driver = object.signIn();
+        driver = object.signIn(Data.userName);
         Thread.sleep(4000);
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://dev-app-fhb.quartustech.com/");
@@ -33,10 +34,10 @@ public class HomePageTest {
 //    }
 
 
-//    @Test
+    @Test
     public void createPost() throws InterruptedException {new Post().createPost(driver);}
 
-    @Test
+//    @Test
     public void createOffer() throws InterruptedException{new Offer().createOffer(driver);}
 
 //    @Test

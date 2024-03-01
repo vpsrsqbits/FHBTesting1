@@ -5,26 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82a80ad7-8ca7-4487-b94b-655315c3460c" name="Changes" comment="Updated to the current changes in the web-app.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/APIs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/UserIncrement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UserCount" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/home/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/home/Offer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/home/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/home/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/APIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/APIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/frenbenhealth/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ForgotPasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ForgotPasswordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UserCount" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UserCount" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SignUpPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignUpPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserOnboardingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserOnboardingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/explore/ExploreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/explore/ExploreTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/home/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/home/HomePageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/HealthJourneyFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/HealthJourney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/HealthPractitionerFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/HealthPractitioner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/JustBrowseFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/JustBrowse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/ProfileSetupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/ProfileSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/SeekingFriendsFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/SeekingFriends.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/YOLOFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/YOLO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/home/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/home/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/HealthJourney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/HealthJourney.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/HealthPractitioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/HealthPractitioner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/JustBrowse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/JustBrowse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/ProfileSetup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/SeekingFriends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/SeekingFriends.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/profilesetup/YOLO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/profilesetup/YOLO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,44 +62,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.APIs.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.SignIn.executor": "Run",
-    "JUnit.AISearchTest.executor": "Run",
-    "JUnit.AboutTest.executor": "Run",
-    "JUnit.BecomeSponsorTest.executor": "Run",
-    "JUnit.ExploreTest.executor": "Run",
-    "JUnit.ForgotPasswordTest.executor": "Run",
-    "JUnit.HelpCenterTest.executor": "Run",
-    "JUnit.HomePageTest.executor": "Run",
-    "JUnit.ProfileSetupTest.executor": "Run",
-    "JUnit.ReferenceGuideTest.executor": "Run",
-    "JUnit.SettingsTest.executor": "Run",
-    "JUnit.SignInPageTest.executor": "Run",
-    "JUnit.SignUpPageTest.executor": "Run",
-    "JUnit.UserOnboardingTest.executor": "Run",
-    "JUnit.YOLOTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/squarebits/IdeaProjects/FBH_Testing1",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.APIs.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignIn.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AISearchTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AboutTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BecomeSponsorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExploreTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ForgotPasswordTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HelpCenterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HomePageTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Post.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProfileSetupTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReferenceGuideTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SettingsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SignInPageTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SignUpPageTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Testing.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserOnboardingTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.YOLOTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/squarebits/IdeaProjects/FBH_Testing1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSON"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.frenbenhealth" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SignIn">
     <configuration name="SignIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.frenbenhealth.SignIn" />
       <module name="FBH_Testing1" />
@@ -175,27 +182,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.SignIn" />
-      <item itemvalue="JUnit.ExploreTest" />
-      <item itemvalue="JUnit.HomePageTest" />
       <item itemvalue="JUnit.AISearchTest" />
       <item itemvalue="JUnit.BecomeSponsorTest" />
+      <item itemvalue="JUnit.ExploreTest" />
+      <item itemvalue="JUnit.HomePageTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SignIn" />
-        <item itemvalue="JUnit.ExploreTest" />
         <item itemvalue="JUnit.HomePageTest" />
-        <item itemvalue="JUnit.AISearchTest" />
+        <item itemvalue="JUnit.ExploreTest" />
         <item itemvalue="JUnit.BecomeSponsorTest" />
+        <item itemvalue="JUnit.AISearchTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-3c5dfc45" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

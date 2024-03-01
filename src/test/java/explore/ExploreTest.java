@@ -1,5 +1,6 @@
 package explore;
 
+import org.frenbenhealth.Data;
 import org.frenbenhealth.SignIn;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -17,7 +18,7 @@ public class ExploreTest {
     @BeforeAll
     public void setup() throws InterruptedException {
         SignIn signIn = new SignIn();
-        driver = signIn.signIn();
+        driver = signIn.signIn(Data.userName);
         Thread.sleep(4000);
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://dev-app-fhb.quartustech.com/explore/");

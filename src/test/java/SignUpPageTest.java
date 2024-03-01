@@ -21,12 +21,13 @@ public class SignUpPageTest {
     int i;
     String URL= "https://dev-app-fhb.quartustech.com/signup/", pass="Test@123";
 
-    @BeforeAll
+    @BeforeEach
     void setup(){
         driver = new ChromeDriver();
     }
 
-    @Test
+//    @Test()
+    @RepeatedTest(5)
     void userSignUp() throws IOException {
 
 
@@ -115,9 +116,9 @@ public class SignUpPageTest {
     }
 
 
-//    @AfterAll
+    @AfterEach
     void teardown() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.quit();
     }
 }

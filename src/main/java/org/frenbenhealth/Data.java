@@ -2,9 +2,19 @@ package org.frenbenhealth;
 
 public class Data {
 
-    public static String webAppUrl = "https://dev-app-fhb.quartustech.com/";
-    public static String authToken = "Bearer eyJraWQiOiJLZzNLdG02MWxyRVJVZFU3ZDhGMHZYekZIRGJROTh3VVwvT0UrVzFUSThSWT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4YTgxNzQwNy02MDEwLTRlMzAtOGRiYy1kYmE3ZTEwOTQ0ZjciLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfS2FJODV3amx6IiwiY29nbml0bzp1c2VybmFtZSI6InJhbmRhbGwuaGVuIiwib3JpZ2luX2p0aSI6IjkzYzM1ZjkzLWNiMWEtNGFhYy04NTc0LTMxZWJhNjI4ODFlMCIsImF1ZCI6IjQ3bG9mNjBhcWRxNXZvZnRibzVjYTY1ZDFnIiwiZXZlbnRfaWQiOiIwMWJmMWUxYS04MWFjLTRkN2QtYTQxNS1lYjQ0NTYxYzZiMzMiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTcwODA5MzQ5OCwibmFtZSI6IlJhbmRhbGwgSGVuIiwiZXhwIjoxNzA4MTc5ODk4LCJpYXQiOjE3MDgwOTM0OTgsImp0aSI6Ijg0MWM4MDhiLWNhNzMtNDc2Ni05N2JhLTBlNGYyMjg5NzIwZSIsImVtYWlsIjoicmFtc2FtcGxlMUBnbWFpbC5jb20ifQ.gHIj5jkP59ob-5afahyiVerXtpyV3jSXtdopVTWmAsIwBb7B7sR9cjaiw_DlXM4Ynyj7B_AlPPGO1FmogEGmSkOxpa0EI-b0FXyUbUL-LQDOByCt4e2xAV2OWm3K1K0HhWfzThgE2xiidRFASq55yj1oaf0KQPxscQGkHSiwtbbd6hl-Y47ojrFC8-M08eObriwDVCCP98xaXIUk3xR89o44XcZrq2YIkBbl5tU-HUxD1EC6whZOJ8FDq1FD5VKrnwFvwowJ4HKXYCsmb16uzNSEXAQJQYizl0LULwmYd5rpT9U5EYTVlfSclI-TxX2vdXYdypXrIekV7hDOKvp2HA";
+    public static String dev_WebAppBaseUrl = "https://dev-app-fhb.quartustech.com/";
+    public static String dev_ProfileSetupUrl = "https://dev-app-fhb.quartustech.com/profile-setup";
+    public static String dev_apiBaseUrl="https://dev-api-fhb.quartustech.com";
+    public static String stag_WebAppBaseUrl = "https://stag-app-fhb.quartustech.com/";
+    public static String stag_ProfileSetupUrl = "https://stag-app-fhb.quartustech.com/profile-setup";
+    public static String stag_APIBaseUrl ="https://stag-api-fhb.quartustech.com";
+
+//  --------------------------------------------------------------------------------------------------------------------
+    public static String apiBaseUrl = stag_APIBaseUrl;
+    public static String webAppBaseUrl = dev_WebAppBaseUrl;
+    public static String profileSetupUrl = stag_ProfileSetupUrl;
+    public static String authToken = "Bearer eyJraWQiOiJrU1RRZFowdFNUSUpFbDhETnlHV2lKbGVUU0pyNDgzNGZhZlgrRmNMM3dvPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJmMDNjYzgzMS00Y2JjLTRkODMtYmJjNi0yYTZiZmI1MzRmOGIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfTjVUelZIVm9OIiwiY29nbml0bzp1c2VybmFtZSI6IkFuaXRhLkdpc2xhc29uIiwib3JpZ2luX2p0aSI6IjYyNDU5YzMyLWVjYzEtNDc4ZC1hNTEzLWRiMjlmNjVlNzE5NyIsImF1ZCI6IjRoaGl1cjFudWs5dDFtOGphN2p0Mm10NTdiIiwiZXZlbnRfaWQiOiI0ZmZjMmM3Ni1kNzdjLTQ2MWEtOGVlMC01MTU3YTE0NWExNGQiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTcwODUwOTAyNSwibmFtZSI6IkFuaXRhIEdpc2xhc29uIiwiZXhwIjoxNzA4NTk1NDI1LCJpYXQiOjE3MDg1MDkwMjUsImp0aSI6ImQ1ZTlhZGY2LTY2NzQtNGEwMi1hOGJmLWRiZmE1ZjQwYzk1NyIsImVtYWlsIjoicmFtc2FtcGxlMisxQGdtYWlsLmNvbSJ9.jJ6u8MQohBSJq4YR22VTLjD1mWejT1t_dpnxIxyemo4UG-hjkir3WaT_iOM-uXBszQzR-952Gm2EDoAxW8uPoXcIvYo06HQtqps4kK2XzreIiYjQxq_5tfYJhmwpPSHB0SBaAWW4oWv7hxBE3OKvpb1PcA68s2VSWfFjMpPE63umPkFy9GX3Fc97aQs71Pmqik-z_5Lo175edb43tfwEybeQlwJzH5MB9mlEMzMdNdDSziDaDTnCQhipMfEjEOpK2T41Etc2BCdyXlx1WwTxvxyzFR6sRxtCnHYKvqqLXlXjzWltGqNTKe6qRaU5fPGlGzibN7jUzYTHEf2nZWmBMQ";
     public static String userName = "randall.hen";
     public static String password = "Test@1234";
-    public static String apiBaseUrl="https://dev-api-fhb.quartustech.com";
+    public String userNames[] = {"Anita.Gislason","Alexandre_Considine32","Eula.Heidenreich","Rachael_Feil","Tyler_Bergstrom"};
 }
